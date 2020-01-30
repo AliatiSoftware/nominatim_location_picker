@@ -1,0 +1,1 @@
+# nominatim_location_picker
