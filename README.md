@@ -11,7 +11,6 @@ Dillinger is a cloud-enabled, mobile-ready, offline-storage, AngularJS powered H
   - Magic
 
 # Nominatim Location Picker's Features!
-----
 
   - Import a HTML file and watch it magically convert to Markdown
   - Drag and drop images (requires your Dropbox account be linked)
@@ -39,8 +38,6 @@ And of course Dillinger itself is open source with a [public repository][dill]
  on GitHub.
 
 ## Usage
-----
-
 To use this plugin, add `nominatim_location_picker` as a [dependency in your pubspec.yaml file](https://flutter.io/platform-plugins/).
 
 ```dart
@@ -54,7 +51,6 @@ import 'package:nominatim_location_picker/nominatim_location_picker.dart';
 ```
 
 ### Example
-----
 
 ``` dart
 import 'package:flutter/material.dart';
@@ -134,9 +130,18 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 ```
 
-### Plugins
+
+#### Development Team 
 ----
 
+| Team Members | Github | Email|
+| ------ | ------ | ------ |
+| Lucas Finoti | [https://github.com/FinotiLucas][LFGh] |lucas.finoti@protonmail.com|
+| Joáo Pedro Martins | [https://github.com/jpmdodev][JpGh] |jpm|
+
+
+### Credits 
+----
 Dillinger is currently extended with the following plugins. Instructions on how to use them in your own application are linked below.
 
 | Plugin | Web Sites |
@@ -144,18 +149,15 @@ Dillinger is currently extended with the following plugins. Instructions on how 
 | Nominatim  | [plugins/dropbox/README.md][PlDb] |
 | Open Street Map | [plugins/github/README.md][PlGh] |
 | Wikimedia Maps | [plugins/googledrive/README.md][PlGd] |
-
+| Google Maps Location Picker | [plugins/googledrive/README.md][PlGd] 
 
 
 ### Development
 ----
-
 Want to contribute? Great!
 
 Dillinger uses Gulp + Webpack for fast developing.
 Make a change in your file and instantaneously see your updates!
-
-
 
 ### License
 ----
