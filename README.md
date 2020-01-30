@@ -38,6 +38,7 @@ And of course Dillinger itself is open source with a [public repository][dill]
  on GitHub.
 
 ## Usage
+-----------
 To use this plugin, add `nominatim_location_picker` as a [dependency in your pubspec.yaml file](https://flutter.io/platform-plugins/).
 
 ```dart
@@ -49,6 +50,21 @@ Import the Nominatim Location Picker in your .dart file...
 ```dart
 import 'package:nominatim_location_picker/nominatim_location_picker.dart';
 ```
+
+### Android Permissions 
+-----------
+The following permissions are recommended.
+
+`android.permission.ACCESS_FINE_LOCATION` Allows the API to determine as precise a location as possible from the available location providers, including the Global Positioning System (GPS) as well as WiFi and mobile cell data.
+
+`android.permission.ACCESS_COARSE_LOCATION` Allows the API to use WiFi or mobile cell data (or both) to determine the device's location. The API returns the location with an accuracy approximately equivalent to a city block.
+
+```xml
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+<uses-permission android:name="android.permission.INTERNET" />
+```
+
 
 ### Example
 
