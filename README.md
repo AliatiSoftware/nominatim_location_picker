@@ -1,41 +1,41 @@
-# Nominatim Location Picker
-
-
-
+# Nominatim Location Picker 
 [![Build Status](https://img.shields.io/badge/pub-0.0.1-orange)](https://travis-ci.org/joemccann/dillinger)
 
-Dillinger is a cloud-enabled, mobile-ready, offline-storage, AngularJS powered HTML5 Markdown editor.
 
-  - Type some Markdown on the left
-  - See HTML in the right
-  - Magic
+Nominatim Location Picker is a package that appears as a free alternative with support for Geocoding, using the OpenStreetMap API Using the OpenStreetMap API serving as a substitute for Google Maps and MapBox spatial search. However, there are some limitations regarding its use on a large scale project.
+  
 
-# Nominatim Location Picker's Features!
-
-  - Import a HTML file and watch it magically convert to Markdown
-  - Drag and drop images (requires your Dropbox account be linked)
-
-
-You can also:
-  - Import and save files from GitHub, Dropbox, Google Drive and One Drive
-  - Drag and drop markdown and HTML files into Dillinger
-  - Export documents as Markdown, HTML and PDF
-
-Markdown is a lightweight markup language based on the formatting conventions that people naturally use in email.  As [John Gruber] writes on the [Markdown site][df1]
-
-> The overriding design goal for Markdown's
-> formatting syntax is to make it as readable
-> as possible. The idea is that a
-> Markdown-formatted document should be
-> publishable as-is, as plain text, without
-> looking like it's been marked up with tags
-> or formatting instructions.
-
-This text you see here is *actually* written in Markdown! To get a feel for Markdown's syntax, type some text into the left window and watch the results in the right.
+# Using the OpenStreetMap API Location Picker's version 0.0.1 new features!
+----------------------
+ - Geocoding search
+ - Get Current User Location
+ - Returns the Latitude and Longitude coordinates of the searched location 
+ - Returns the description of the searched location
+ - Returns the Country, State, city and district of the searched Location
 
 
-And of course Dillinger itself is open source with a [public repository][dill]
- on GitHub.
+ # OpenStreetMap Nominatim
+----------------------
+
+Nominatim (from the Latin, 'by name') is a tool to search OpenStreetMap data
+by name and address (geocoding) and to generate synthetic addresses of
+OSM points (reverse geocoding). An instance with up-to-date data can be found
+at https://nominatim.openstreetmap.org. Nominatim is also used as one of the
+sources for the Search box on the OpenStreetMap home page.
+
+# Nominatim's Documentation
+------------
+
+The documentation of the latest development version is in the
+`docs/` subdirectory. A HTML version can be found at
+https://nominatim.org/release-docs/develop/ .
+
+# Nominatim's Limitations
+
+- No heavy uses (an absolute maximum of 1 request per second).
+- Provide a valid HTTP Referer or User-Agent identifying the application (stock User-Agents as set by http libraries will not do).
+- Clearly display attribution as suitable for your medium.
+- Data is provided under the ODbL license which requires to share alike (although small extractions are likely to be covered by fair usage / fair dealing).
 
 ## Usage
 -----------
@@ -98,9 +98,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   
-  
   RaisedButton createButton(Color color, String name) {
-
     return RaisedButton(
       color: color,
       onPressed: () {
@@ -153,58 +151,44 @@ class _MyHomePageState extends State<MyHomePage> {
 | Team Members | Github | Email|
 | ------ | ------ | ------ |
 | Lucas Finoti | [https://github.com/FinotiLucas][LFGh] |lucas.finoti@protonmail.com|
-| Joáo Pedro Martins | [https://github.com/jpmdodev][JpGh] |jpm|
+| João Pedro Martins | [https://github.com/jpmdodev][JpGh] |jpmdo98@gmail.com|
 
 
 ### Credits 
 ----
-Dillinger is currently extended with the following plugins. Instructions on how to use them in your own application are linked below.
+Everything that we use as a reference to make this project possible
 
-| Plugin | Web Sites |
+| Source | Web Sites |
 | ------ | ------ |
-| Nominatim  | [plugins/dropbox/README.md][PlDb] |
-| Open Street Map | [plugins/github/README.md][PlGh] |
-| Wikimedia Maps | [plugins/googledrive/README.md][PlGd] |
-| Google Maps Location Picker | [plugins/googledrive/README.md][PlGd] 
+| Nominatim  | [https://nominatim.org/release-docs/develop/][NNT] |
+| Open Street Map | [https://www.openstreetmap.org][OSM] |
+| Wikimedia Maps | [http://wikimapia.org/][WMM] |
+| Google Maps Location Picker | [https://pub.dev/packages/google_map_location_picker][GMLP] 
 
 
 ### Development
 ----
 Want to contribute? Great!
-
-Dillinger uses Gulp + Webpack for fast developing.
-Make a change in your file and instantaneously see your updates!
+Code sharing makes the world a better place <3
 
 ### License
 ----
 
-MIT
+Apache License 2.0
+[See more about the license][LICENSE]
 
 
-**Free Software, Hell Yeah!**
+
 
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
 
 
-   [dill]: <https://github.com/joemccann/dillinger>
-   [git-repo-url]: <https://github.com/joemccann/dillinger.git>
-   [john gruber]: <http://daringfireball.net>
-   [df1]: <http://daringfireball.net/projects/markdown/>
-   [markdown-it]: <https://github.com/markdown-it/markdown-it>
-   [Ace Editor]: <http://ace.ajax.org>
-   [node.js]: <http://nodejs.org>
-   [Twitter Bootstrap]: <http://twitter.github.com/bootstrap/>
-   [jQuery]: <http://jquery.com>
-   [@tjholowaychuk]: <http://twitter.com/tjholowaychuk>
-   [express]: <http://expressjs.com>
-   [AngularJS]: <http://angularjs.org>
-   [Gulp]: <http://gulpjs.com>
 
-   [PlDb]: <https://github.com/joemccann/dillinger/tree/master/plugins/dropbox/README.md>
    [LFGh]: <https://github.com/FinotiLucas>
    [JPGh]: <https://github.com/jpmdodev>
-   
-   [PlGd]: <https://github.com/joemccann/dillinger/tree/master/plugins/googledrive/README.md>
-   [PlOd]: <https://github.com/joemccann/dillinger/tree/master/plugins/onedrive/README.md>
-   [PlMe]: <https://github.com/joemccann/dillinger/tree/master/plugins/medium/README.md>
-   [PlGa]: <https://github.com/RahulHP/dillinger/blob/master/plugins/googleanalytics/README.md>
+   [LICENSE]: <https://github.com/AliatiSoftware/nominatim_location_picker/blob/master/LICENSE>
+   [GMLP]: <https://pub.dev/packages/google_map_location_picker>
+   [NNT]: <https://nominatim.org/release-docs/develop/>
+   [OSM]: <https://www.openstreetmap.org>
+   [WMM]: <http://wikimapia.org/>
+
