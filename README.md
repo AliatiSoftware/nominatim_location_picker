@@ -5,7 +5,7 @@
 Nominatim Location Picker is a package that appears as a free alternative with support for Geocoding, using the OpenStreetMap API Using the OpenStreetMap API serving as a substitute for Google Maps and MapBox spatial search. However, there are some limitations regarding its use on a large scale project.
   
 
-# Using the OpenStreetMap API Location Picker's version 0.0.1 new features!
+# Nominatim Location Picker's version 0.0.1 new features!
 ----------------------
  - Geocoding search
  - Get Current User Location
