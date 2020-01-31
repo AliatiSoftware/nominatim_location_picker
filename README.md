@@ -191,7 +191,9 @@ Help us to continue developing solutions for the community
 ----
 
 Apache License 2.0
+
 Copyright (c) 2020 Aliati Sotware, Lucas Finoti and João Pedro Martins
+
 [See more about the license][LICENSE]
 
    [LFGh]: <https://github.com/FinotiLucas>
