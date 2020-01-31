@@ -1,17 +1,20 @@
 # Nominatim Location Picker 
-[![Build Status](https://img.shields.io/badge/pub-0.0.1-orange)](https://travis-ci.org/joemccann/dillinger)
 
+[![pub package](https://img.shields.io/pub/v/nominatim_location_picker.svg)](https://pub.dartlang.org/packages/nominatim_location_picker) [![GitHub stars](https://img.shields.io/github/stars/AliatiSoftware/nominatim_location_picker)](https://github.com/AliatiSoftware/nominatim_location_picker/stargazers) [![GitHub forks](https://img.shields.io/github/forks/AliatiSoftware/nominatim_location_picker)](https://github.com/AliatiSoftware/nominatim_location_picker/network)  [![GitHub license](https://img.shields.io/github/license/AliatiSoftware/nominatim_location_picker)](https://github.com/AliatiSoftware/nominatim_location_picker/blob/master/LICENSE)  [![GitHub issues](https://img.shields.io/github/issues/AliatiSoftware/nominatim_location_picker)](https://github.com/AliatiSoftware/nominatim_location_picker/issues) 
+Nominatim Location Picker is a package that appears as a **FREE** alternative (WITH NO API KEYS OR EVEN ACCESSTOKEN, NONE OF THEM ARE NECESSARY) with support for Geocoding, using the OpenStreetMap Nominatim service serving as a substitute for Google Maps and MapBox spatial search. However, there are some limitations (All of the conditions for using Nominatim are well explained further in this documentation) regarding its use on a large scale project.
 
-Nominatim Location Picker is a package that appears as a free alternative with support for Geocoding, using the OpenStreetMap API Using the OpenStreetMap API serving as a substitute for Google Maps and MapBox spatial search. However, there are some limitations regarding its use on a large scale project.
+We highly recommend the use of the package in small and medium projects due to the limitations that OpenStreetMap servers have, or as a way of reducing costs in large projects, varying between the map providers of your preference and our package.
+
   
 
 # Nominatim Location Picker's version 0.0.1 new features!
 ----------------------
- - Geocoding search
- - Get Current User Location
- - Returns the Latitude and Longitude coordinates of the searched location 
- - Returns the description of the searched location
- - Returns the Country, State, city and district of the searched Location
+ - Geocoding search;
+ - Get Current User Location;
+ - Returns the Latitude and Longitude coordinates of the searched location;
+ - Returns the description of the searched location;
+ - Returns the Country, State, city and district of the searched Location;
+ - Use your own custom Maps and Markers.
 
 
  # OpenStreetMap Nominatim
@@ -41,10 +44,10 @@ https://nominatim.org/release-docs/develop/ .
 -----------
 To use this plugin, add `nominatim_location_picker` as a [dependency in your pubspec.yaml file](https://flutter.io/platform-plugins/).
 
-```dart
-nominatim_location_picker ^0.0.1
+```yaml
+dependencies:
+  nominatim_location_picker: ^0.0.1
 ```
-
 Import the Nominatim Location Picker in your .dart file...
 
 ```dart
@@ -145,13 +148,13 @@ class _MyHomePageState extends State<MyHomePage> {
 ```
 
 
-#### Development Team 
+#### AliatiSoftware Development Team 
 ----
 
-| Team Members | Github | Email|
-| ------ | ------ | ------ |
-| Lucas Finoti | [https://github.com/FinotiLucas][LFGh] |lucas.finoti@protonmail.com|
-| João Pedro Martins | [https://github.com/jpmdodev][JpGh] |jpmdo98@gmail.com|
+| Team Members | Role | Github | Email|
+| ------ | ------ | ------ | ------ |
+| Lucas Finoti |CEO |[https://github.com/FinotiLucas][LFGh] |lucas.finoti@protonmail.com|
+| João Pedro Martins |CTO |[https://github.com/jpmdodev][JpGh] |jpmdo98@gmail.com|
 
 
 ### Credits 
@@ -169,18 +172,24 @@ Everything that we use as a reference to make this project possible
 ### Development
 ----
 Want to contribute? Great!
-Code sharing makes the world a better place <3
+Sharing Code makes the world a better place <3
+
+
+### Support
+----
+
+Help us to continue developing solutions for the community 
+
+<center>
+<a href="https://www.buymeacoffee.com/6cdltqC" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-blue.png" alt="Buy Me A Coffee" style="height: 51px !important;width: 217px !important;" ></a>
+</center>
+
 
 ### License
 ----
 
 Apache License 2.0
 [See more about the license][LICENSE]
-
-
-
-
-[//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
 
 
 
