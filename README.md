@@ -1,6 +1,8 @@
 # Nominatim Location Picker 
 
 [![pub package](https://img.shields.io/pub/v/nominatim_location_picker.svg)](https://pub.dartlang.org/packages/nominatim_location_picker) [![GitHub stars](https://img.shields.io/github/stars/AliatiSoftware/nominatim_location_picker)](https://github.com/AliatiSoftware/nominatim_location_picker/stargazers) [![GitHub forks](https://img.shields.io/github/forks/AliatiSoftware/nominatim_location_picker)](https://github.com/AliatiSoftware/nominatim_location_picker/network)  [![GitHub license](https://img.shields.io/github/license/AliatiSoftware/nominatim_location_picker)](https://github.com/AliatiSoftware/nominatim_location_picker/blob/master/LICENSE)  [![GitHub issues](https://img.shields.io/github/issues/AliatiSoftware/nominatim_location_picker)](https://github.com/AliatiSoftware/nominatim_location_picker/issues) 
+
+
 Nominatim Location Picker is a package that appears as a **FREE** alternative (WITH NO API KEYS OR EVEN ACCESSTOKEN, NONE OF THEM ARE NECESSARY) with support for Geocoding, using the OpenStreetMap Nominatim service serving as a substitute for Google Maps and MapBox spatial search. However, there are some limitations (All of the conditions for using Nominatim are well explained further in this documentation) regarding its use on a large scale project.
 
 We highly recommend the use of the package in small and medium projects due to the limitations that OpenStreetMap servers have, or as a way of reducing costs in large projects, varying between the map providers of your preference and our package.
