@@ -2,6 +2,7 @@
 
 [![pub package](https://img.shields.io/pub/v/nominatim_location_picker.svg)](https://pub.dartlang.org/packages/nominatim_location_picker) [![GitHub stars](https://img.shields.io/github/stars/AliatiSoftware/nominatim_location_picker)](https://github.com/AliatiSoftware/nominatim_location_picker/stargazers) [![GitHub forks](https://img.shields.io/github/forks/AliatiSoftware/nominatim_location_picker)](https://github.com/AliatiSoftware/nominatim_location_picker/network)  [![GitHub license](https://img.shields.io/github/license/AliatiSoftware/nominatim_location_picker)](https://github.com/AliatiSoftware/nominatim_location_picker/blob/master/LICENSE)  [![GitHub issues](https://img.shields.io/github/issues/AliatiSoftware/nominatim_location_picker)](https://github.com/AliatiSoftware/nominatim_location_picker/issues) 
 
+
 Nominatim Location Picker is a package that appears as a **FREE** alternative (WITH NO API KEYS OR EVEN ACCESSTOKEN, NONE OF THEM ARE NECESSARY) with support for Geocoding, using the OpenStreetMap Nominatim service serving as a substitute for Google Maps and MapBox spatial search. However, there are some limitations (All of the conditions for using Nominatim are well explained further in this documentation) regarding its use on a large scale project.
 
 We highly recommend the use of the package in small and medium projects due to the limitations that OpenStreetMap servers have, or as a way of reducing costs in large projects, varying between the map providers of your preference and our package.
@@ -147,21 +148,9 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 ```
-## Custom Usage
-There are several options that allow for more control:
-
-|  Properties  |   Description   |
-|--------------|--------------|
-| `map` |  Pass your custom  TileLayerOptions  |
-| `marker` | Pass your custom  Marker|
-| `initPosition` |  use a List of coordinates [lat, lng]|
 
 
-<br>
-<br>
-
-
-#### Aliati Software Development Team 
+#### AliatiSoftware Development Team 
 ----
 
 | Team Members | Role | Github | Email|
@@ -181,16 +170,12 @@ Everything that we use as a reference to make this project possible
 | Wikimedia Maps | [http://wikimapia.org/][WMM] |
 | Google Maps Location Picker | [https://pub.dev/packages/google_map_location_picker][GMLP] 
 
-# 👍 Contribution
 
+### Development
+----
 Want to contribute? Great!
-Code Sharing makes the world a better place <3
+Sharing Code makes the world a better place <3
 
-1. Fork it
-2. Create your feature branch (git checkout -b my-new-feature)
-3. Commit your changes (git commit -m 'Add some feature')
-4. Push to the branch (git push origin my-new-feature)
-5. Create new Pull Request
 
 ### Support
 ----
@@ -198,7 +183,7 @@ Code Sharing makes the world a better place <3
 Help us to continue developing solutions for the community 
 
 <center>
-<a href="https://www.buymeacoffee.com/6cdltqC" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-blue.png" alt="Buy Us A Coffee" style="height: 51px !important;width: 217px !important;" ></a>
+<a href="https://www.buymeacoffee.com/6cdltqC" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-blue.png" alt="Buy Me A Coffee" style="height: 51px !important;width: 217px !important;" ></a>
 </center>
 
 
@@ -206,9 +191,10 @@ Help us to continue developing solutions for the community
 ----
 
 Apache License 2.0
+
+Copyright (c) 2020 Aliati Sotware, Lucas Finoti and João Pedro Martins
+
 [See more about the license][LICENSE]
-
-
 
    [LFGh]: <https://github.com/FinotiLucas>
    [JPGh]: <https://github.com/jpmdodev>
