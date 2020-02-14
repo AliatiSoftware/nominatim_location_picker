@@ -23,6 +23,8 @@ class _NominatimLocationPickerState extends State<NominatimLocationPicker> {
   bool _isSearching = false;
   double _lat;
   double _lng;
+  LatLng _point;
+  Map retorno;
 
   MapController _mapController = MapController();
 
@@ -90,7 +92,7 @@ class _NominatimLocationPickerState extends State<NominatimLocationPicker> {
 
       _lat = _currentPosition.latitude;
       _lng = _currentPosition.longitude;
-      
+      _point = LatLng(_lat, _lng);
       _markers[0] = Marker(
         width: 80.0,
         height: 80.0,
@@ -114,6 +116,14 @@ class _NominatimLocationPickerState extends State<NominatimLocationPicker> {
     dynamic res = await NominatimService().getAddressLatLng("${_currentPosition.latitude} ${_currentPosition.longitude}");
     setState(() {
       _addresses = res;
+      _lat = _currentPosition.latitude;
+      _lng = _currentPosition.longitude;
+      _point = LatLng(_lat, _lng);    
+      retorno = {
+        'latlng': _point,
+        'state': _addresses[0]['state'],
+        'desc': "${_addresses[0]['country']}, ${_addresses[0]['state']}, ${_addresses[0]['city']}, ${_addresses[0]['city_district']}, ${_addresses[0]['suburb']}"
+      };
       _desc = _addresses[0]['description'];
     });
   }
@@ -297,7 +307,10 @@ class _NominatimLocationPickerState extends State<NominatimLocationPicker> {
           child: FloatingActionButton(
             child: Icon(Icons.arrow_forward),
             onPressed: () {
-              Navigator.pop(context);
+              setState(() {
+                _point = LatLng(_currentPosition.latitude, _currentPosition.longitude);
+              });
+              Navigator.pop(context, retorno);
             }
           ),
         ),
@@ -326,8 +339,15 @@ class _NominatimLocationPickerState extends State<NominatimLocationPicker> {
                   _lat = double.parse(_addresses[index]['lat']);
                   _lng = double.parse(_addresses[index]['lng']);
                   setState(() {
-                    _desc = _addresses[index]['description'];
+                    _desc = "${_addresses[index]['country']}, ${_addresses[index]['state']}, ${_addresses[index]['city']}, ${_addresses[index]['city_district']}, ${_addresses[index]['suburb']}";
                     _isSearching = false;
+                    _lat = _addresses[index]['lat'];
+                    _lng = _addresses[index]['lat'];
+                    retorno = {
+                      'latlng': LatLng(_lat, _lng),
+                      'state': _addresses[index]['state'],
+                      'desc': "${_addresses[index]['country']}, ${_addresses[index]['state']}, ${_addresses[index]['city']}, ${_addresses[index]['city_district']}, ${_addresses[index]['suburb']}"
+                    };
                     _markers[0] = Marker(
                       width: 80.0,
                       height: 80.0,

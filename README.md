@@ -103,14 +103,30 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   
+  Map _pickedLocation;
+  bool hasLocation = false;
+
+  Future getLocation() async {
+    Map result = await showDialog(
+      context: context,
+      builder: (BuildContext ctx){
+        return NominatimLocationPicker();
+      }
+    );
+    if(result != null){
+      setState(() => _pickedLocation = result);
+      setState(() => hasLocation = true);
+    }
+    else{
+      return;
+    }
+  }
+
   RaisedButton createButton(Color color, String name) {
     return RaisedButton(
       color: color,
-      onPressed: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => NominatimLocationPicker()),
-        );
+      onPressed: () async {
+        await getLocation();
       },
       textColor: Colors.white,
       child: Center(
