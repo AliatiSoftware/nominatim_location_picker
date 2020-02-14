@@ -1,5 +1,13 @@
 # Nominatim Location Picker 
 
+
+<p>
+  <img src="https://github.com/AliatiSoftware/nominatim_location_picker/tree/master/exemple/screenshot/03.gif" width=265/>
+  <img src="https://github.com/AliatiSoftware/nominatim_location_picker/tree/master/exemple/screenshot/01.png" width=265 />
+  <img src="https://github.com/AliatiSoftware/nominatim_location_picker/tree/master/exemple/screenshot/02.png" width=265 />
+</p>
+
+
 [![pub package](https://img.shields.io/pub/v/nominatim_location_picker.svg)](https://pub.dartlang.org/packages/nominatim_location_picker) [![GitHub stars](https://img.shields.io/github/stars/AliatiSoftware/nominatim_location_picker)](https://github.com/AliatiSoftware/nominatim_location_picker/stargazers) [![GitHub forks](https://img.shields.io/github/forks/AliatiSoftware/nominatim_location_picker)](https://github.com/AliatiSoftware/nominatim_location_picker/network)  [![GitHub license](https://img.shields.io/github/license/AliatiSoftware/nominatim_location_picker)](https://github.com/AliatiSoftware/nominatim_location_picker/blob/master/LICENSE)  [![GitHub issues](https://img.shields.io/github/issues/AliatiSoftware/nominatim_location_picker)](https://github.com/AliatiSoftware/nominatim_location_picker/issues) 
 
 
@@ -102,7 +110,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  
+
   Map _pickedLocation;
   bool hasLocation = false;
 
@@ -121,8 +129,10 @@ class _MyHomePageState extends State<MyHomePage> {
       return;
     }
   }
-
+  
+  
   RaisedButton createButton(Color color, String name) {
+
     return RaisedButton(
       color: color,
       onPressed: () async {
@@ -138,7 +148,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Widget appBar(){
     return AppBar(
-      title: Text(widget.title),
+      title: Text('Nominatim Location Picker Exemple'),
     );
   }
 
@@ -148,7 +158,7 @@ class _MyHomePageState extends State<MyHomePage> {
       children: <Widget>[
         Padding(
           padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-          child: createButton(Colors.green, 'Acess Nominatim Location Picker'),
+          child: hasLocation ? Center(child:  Text("$_pickedLocation")) : createButton(Colors.green, 'Acess Nominatim Location Picker'),
         )
       ],
     );
@@ -163,6 +173,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
 ```
 
 

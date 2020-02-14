@@ -74,7 +74,7 @@ class _MyHomePageState extends State<MyHomePage> {
       children: <Widget>[
         Padding(
           padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-          child: createButton(Colors.green, 'Acess Nominatim Location Picker'),
+          child: hasLocation ? Center(child:  Text("$_pickedLocation")) : createButton(Colors.green, 'Acess Nominatim Location Picker'),
         )
       ],
     );

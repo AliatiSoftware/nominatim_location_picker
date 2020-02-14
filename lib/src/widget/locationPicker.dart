@@ -128,6 +128,7 @@ class _NominatimLocationPickerState extends State<NominatimLocationPicker> {
     });
   }
 
+
   onWillpop(){
   /*
     --- Função responsável por controlar o retorno da página de pesquisas para a de buscas
@@ -152,6 +153,7 @@ class _NominatimLocationPickerState extends State<NominatimLocationPicker> {
           color: _color
         ), 
         onPressed: () {
+          Navigator.of(context).pop();
           FocusScopeNode currentFocus = FocusScope.of(context);
           if (!currentFocus.hasPrimaryFocus) {
             currentFocus.unfocus();
@@ -272,13 +274,19 @@ class _NominatimLocationPickerState extends State<NominatimLocationPicker> {
                   width: MediaQuery.of(context).size.width * 0.7,
                   padding: EdgeInsets.all(15),
                     child: Center(
-                      child: AutoSizeText(
-                        _desc == null ? "Procurando por sua localização" : _desc,
-                        style: TextStyle(
-                          fontSize: 20
-                        ),
-                        textAlign: TextAlign.start,
-                      ),
+                      child: Scrollbar(
+                        child: new SingleChildScrollView(
+                          scrollDirection: Axis.vertical,
+                          reverse: false,
+                          child: AutoSizeText(
+                            _desc == null ? "Procurando por sua localização" : _desc,
+                            style: TextStyle(
+                              fontSize: 20
+                            ),
+                            textAlign: TextAlign.start,
+                          ),
+                        )
+                      )
                     )
                   ),
                 ],
@@ -339,14 +347,14 @@ class _NominatimLocationPickerState extends State<NominatimLocationPicker> {
                   _lat = double.parse(_addresses[index]['lat']);
                   _lng = double.parse(_addresses[index]['lng']);
                   setState(() {
-                    _desc = "${_addresses[index]['country']}, ${_addresses[index]['state']}, ${_addresses[index]['city']}, ${_addresses[index]['city_district']}, ${_addresses[index]['suburb']}";
+                    _desc = _addresses[index]['description']; /*"${_addresses[index]['country']}, ${_addresses[index]['state']}, ${_addresses[index]['city']}, ${_addresses[index]['city_district']}, ${_addresses[index]['suburb']}";*/
                     _isSearching = false;
-                    _lat = _addresses[index]['lat'];
-                    _lng = _addresses[index]['lat'];
+                    _lat = double.parse(_addresses[index]['lat']);
+                    _lng = double.parse(_addresses[index]['lat']);
                     retorno = {
                       'latlng': LatLng(_lat, _lng),
                       'state': _addresses[index]['state'],
-                      'desc': "${_addresses[index]['country']}, ${_addresses[index]['state']}, ${_addresses[index]['city']}, ${_addresses[index]['city_district']}, ${_addresses[index]['suburb']}"
+                      'desc': _addresses[index]['description'] /*"${_addresses[index]['country']}, ${_addresses[index]['state']}, ${_addresses[index]['city']}, ${_addresses[index]['city_district']}, ${_addresses[index]['suburb']}";*/
                     };
                     _markers[0] = Marker(
                       width: 80.0,

@@ -22,5 +22,6 @@ class NominatimService {
     }
     return share;
   }
+  
 
 }

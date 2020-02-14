@@ -9,7 +9,6 @@ class MapPage extends StatefulWidget {
     @required this.lng,
     @required this.mapController,
     @required this.markers,
-
   }) : super(key: key);
   final List<Marker> markers;
   final double lat;
