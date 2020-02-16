@@ -1,11 +1,10 @@
 name: nominatim_location_picker
-description: Nominatim free geocoder
-version: 0.0.1
-author:
-homepage:
+description: Nominatim has a Completely free geocoding ! Now we have MapBox Support as well
+version: 0.1.0
+homepage: https://github.com/AliatiSoftware/nominatim_location_picker
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: ">=2.3.0 <3.0.0"
 
 dependencies:
   flutter:

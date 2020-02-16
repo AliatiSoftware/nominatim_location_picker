@@ -11,18 +11,16 @@ class Loading extends StatefulWidget {
   _LoadingState createState() => _LoadingState();
 }
 
-class _LoadingState extends State<Loading>
-    with SingleTickerProviderStateMixin {
-  Animation<double> animation_radius_in;
-  Animation<double> animation_radius_out;
-  Animation<double> animation_rotation;
+class _LoadingState extends State<Loading> with SingleTickerProviderStateMixin {
+  Animation<double> animationRadiusIn;
+  Animation<double> animationRadiusOut;
+  Animation<double> animationRotation;
   AnimationController controller;
   double dotRadius;
   double radius;
 
   @override
   void dispose() {
-
     controller.dispose();
     super.dispose();
   }
@@ -42,21 +40,21 @@ class _LoadingState extends State<Loading>
         duration: const Duration(milliseconds: 1900),
         vsync: this);
 
-    animation_rotation = Tween(begin: 0.0, end: 1.0).animate(
+    animationRotation = Tween(begin: 0.0, end: 1.0).animate(
       CurvedAnimation(
         parent: controller,
         curve: Interval(0.0, 1.0, curve: Curves.linear),
       ),
     );
 
-    animation_radius_in = Tween(begin: 1.0, end: 0.0).animate(
+    animationRadiusIn = Tween(begin: 1.0, end: 0.0).animate(
       CurvedAnimation(
         parent: controller,
         curve: Interval(0.75, 1.0, curve: Curves.elasticIn),
       ),
     );
 
-    animation_radius_out = Tween(begin: 0.0, end: 1.0).animate(
+    animationRadiusOut = Tween(begin: 0.0, end: 1.0).animate(
       CurvedAnimation(
         parent: controller,
         curve: Interval(0.0, 0.25, curve: Curves.elasticOut),
@@ -66,9 +64,9 @@ class _LoadingState extends State<Loading>
     controller.addListener(() {
       setState(() {
         if (controller.value >= 0.75 && controller.value <= 1.0)
-          radius = widget.radius * animation_radius_in.value;
+          radius = widget.radius * animationRadiusIn.value;
         else if (controller.value >= 0.0 && controller.value <= 0.25)
-          radius = widget.radius * animation_radius_out.value;
+          radius = widget.radius * animationRadiusOut.value;
       });
     });
 
@@ -87,7 +85,7 @@ class _LoadingState extends State<Loading>
       //color: Colors.black12,
       child: new Center(
         child: new RotationTransition(
-          turns: animation_rotation,
+          turns: animationRotation,
           child: new Container(
             //color: Colors.limeAccent,
             child: new Center(
@@ -203,7 +201,6 @@ class Dot extends StatelessWidget {
         width: radius,
         height: radius,
         decoration: BoxDecoration(color: color, shape: BoxShape.circle),
-
       ),
     );
   }
