@@ -247,9 +247,9 @@ import  'package:nominatim_location_picker/nominatim_location_picker.dart';
 
 | ------ | ------ | ------ | ------ |
 
-| Lucas Finoti |CEO |[https://github.com/FinotiLucas][LFGh] |lucas.finoti@protonmail.com|
+| Lucas Finoti |CEO | [https://github.com/FinotiLucas][LFGh] | lucas.finoti@protonmail.com|
 
-| João Pedro Martins |CTO |[https://github.com/jpmdodev][JpGh] |jpmdo98@gmail.com|
+| João Pedro Martins |CTO | [https://github.com/jpmdodev][JpGh] | jpmdo98@gmail.com|
 
   
   
