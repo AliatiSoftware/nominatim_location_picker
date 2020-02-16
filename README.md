@@ -1,5 +1,4 @@
 
-<<<<<<< HEAD
 # Nominatim Location Picker
 
   
@@ -15,27 +14,14 @@ Nominatim Location Picker is a package that appears as a **FREE** alternative (W
 # Nominatim Location Picker Screenshots
 
 <p>
-=======
-[![pub package](https://img.shields.io/pub/v/nominatim_location_picker.svg)](https://pub.dartlang.org/packages/nominatim_location_picker) [![GitHub stars](https://img.shields.io/github/stars/AliatiSoftware/nominatim_location_picker)](https://github.com/AliatiSoftware/nominatim_location_picker/stargazers) [![GitHub forks](https://img.shields.io/github/forks/AliatiSoftware/nominatim_location_picker)](https://github.com/AliatiSoftware/nominatim_location_picker/network)  [![GitHub license](https://img.shields.io/github/license/AliatiSoftware/nominatim_location_picker)](https://github.com/AliatiSoftware/nominatim_location_picker/blob/master/LICENSE)  [![GitHub issues](https://img.shields.io/github/issues/AliatiSoftware/nominatim_location_picker)](https://github.com/AliatiSoftware/nominatim_location_picker/issues) 
-
-<p>
-  <img src="https://github.com/AliatiSoftware/nominatim_location_picker/blob/master/exemple/screenshot/03.gif?raw=true" width=265/>
-  <img src="https://github.com/AliatiSoftware/nominatim_location_picker/blob/master/exemple/screenshot/01.png?raw=true" width=265 />
-  <img src="https://github.com/AliatiSoftware/nominatim_location_picker/blob/master/exemple/screenshot/02.png?raw=true" width=265 />
-</p>
->>>>>>> da587c5aa52775812b17d1c2edc6b1a9cf45e3fb
 
 <img  src="https://github.com/AliatiSoftware/nominatim_location_picker/blob/master/exemple/assets/screenshot/nominatim.gif?raw=true"  width=265/>
 
-<<<<<<< HEAD
 <img  src="https://github.com/AliatiSoftware/nominatim_location_picker/blob/master/exemple/assets/screenshot/nominatim-01.png?raw=true"  width=265  />
 
 <img  src="https://github.com/AliatiSoftware/nominatim_location_picker/blob/master/exemple/assets/screenshot/nominatim-02.png?raw=true"  width=265  />
 
 <img  src="https://github.com/AliatiSoftware/nominatim_location_picker/blob/master/exemple/assets/screenshot/nominatim-03.png?raw=true"  width=265  />
-=======
-Nominatim Location Picker is a package that appears as a **FREE** alternative (WITH NO API KEYS OR EVEN ACCESSTOKEN, NONE OF THEM ARE NECESSARY) with support for Geocoding, using the OpenStreetMap Nominatim service serving as a substitute for Google Maps and MapBox spatial search. However, there are some limitations (All of the conditions for using Nominatim are well explained further in this documentation) regarding its use on a large scale project.
->>>>>>> da587c5aa52775812b17d1c2edc6b1a9cf45e3fb
 
 </p>
   # MapBox Location Picker Screenshots
