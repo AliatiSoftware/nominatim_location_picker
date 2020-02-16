@@ -24,9 +24,11 @@ Nominatim Location Picker is a package that appears as a **FREE** alternative (W
 <img  src="https://github.com/AliatiSoftware/nominatim_location_picker/blob/master/example/assets/screenshot/nominatim-03.png?raw=true"  width=265  />
 
 </p>
-  # MapBox Location Picker Screenshots
-  
-  <img  src="https://github.com/AliatiSoftware/nominatim_location_picker/blob/master/example/assets/screenshot/mapbox.gif?raw=true"  width=265/>
+
+# MapBox Location Picker Screenshots
+
+<p>  
+<img  src="https://github.com/AliatiSoftware/nominatim_location_picker/blob/master/example/assets/screenshot/mapbox.gif?raw=true"  width=265/>
 
 <img  src="https://github.com/AliatiSoftware/nominatim_location_picker/blob/master/example/assets/screenshot/mapbox-01.png?raw=true"  width=265  />
 
