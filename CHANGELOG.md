@@ -13,3 +13,7 @@
 ## [0.1.0+2] - TODO: Add release date.
 
 * TODO: Adding custom maps and markers
+
+## [0.1.0+3] - TODO: Add release date.
+
+* TODO: Small bugs fixes

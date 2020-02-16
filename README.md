@@ -284,8 +284,7 @@ import 'package:flutter_map/flutter_map.dart';
   Widget getLocationWithMapBox() {
     return MapBoxLocationPicker(
       popOnSelect: true,
-      apiKey: "pk.eyJ1IjoiYWxpYXRpc29mdHdhcmUiLCJhIjoiY2s2bWFiZDZ3MG56ODNkcWZjbWRkMDBncSJ9.pQ9-4cgNJThcp1Q3PILAcg",
-      //apiKey: "YOUR API KEY",
+      apiKey: "YOUR API KEY",
       limit: 10,
       language: 'pt',
       country: 'br',
