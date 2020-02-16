@@ -11,21 +11,20 @@ import 'package:nominatim_location_picker/src/widget/places_search.dart';
 import 'package:nominatim_location_picker/src/widget/predictions.dart';
 import 'package:nominatim_location_picker/src/services/nominatim.dart';
 
-class MapBoxPlaceSearchWidget extends StatefulWidget {
-  MapBoxPlaceSearchWidget({
-    @required this.apiKey,
-    this.onSelected,
-    // this.onSearch,
-    this.searchHint = 'Search',
-    this.language = 'en',
-    this.location,
-    this.limit = 5,
-    this.country,
-    this.context,
-    this.height,
-    this.popOnSelect = false,
-    this.awaitingForLocation = "Awaiting for you current location"
-  });
+class MapBoxLocationPicker extends StatefulWidget {
+  MapBoxLocationPicker(
+      {@required this.apiKey,
+      this.onSelected,
+      // this.onSearch,
+      this.searchHint = 'Search',
+      this.language = 'en',
+      this.location,
+      this.limit = 5,
+      this.country,
+      this.context,
+      this.height,
+      this.popOnSelect = false,
+      this.awaitingForLocation = "Awaiting for you current location"});
 
   /// API Key of the MapBox.
   final String apiKey;
@@ -61,8 +60,7 @@ class MapBoxPlaceSearchWidget extends StatefulWidget {
   final String awaitingForLocation;
 
   @override
-  _MapBoxPlaceSearchWidgetState createState() =>
-      _MapBoxPlaceSearchWidgetState();
+  _MapBoxLocationPickerState createState() => _MapBoxLocationPickerState();
 
   ///To get the height of the page
   final BuildContext context;
@@ -74,7 +72,7 @@ class MapBoxPlaceSearchWidget extends StatefulWidget {
   // final void Function(MapBoxPlaces place) onSearch;
 }
 
-class _MapBoxPlaceSearchWidgetState extends State<MapBoxPlaceSearchWidget>
+class _MapBoxLocationPickerState extends State<MapBoxLocationPicker>
     with SingleTickerProviderStateMixin {
   var reverseGeoCoding;
 
@@ -108,6 +106,8 @@ class _MapBoxPlaceSearchWidgetState extends State<MapBoxPlaceSearchWidget>
       ),
     )
   ];
+
+  MapBoxPlace _prediction;
 
   List<MapBoxPlace> _placePredictions = [];
   // MapBoxPlace _selectedPlace;
@@ -297,9 +297,18 @@ class _MapBoxPlaceSearchWidgetState extends State<MapBoxPlaceSearchWidget>
             ),
             IconButton(
               icon: Icon(
-                Icons.search,
+                _textEditingController.text == "" ? Icons.search : Icons.close,
+                color: Colors.black87,
               ),
-              onPressed: () async {},
+              onPressed: () {
+                _textEditingController.text == ""
+                    ? null
+                    : setState(() {
+                        _textEditingController.text == ""
+                            ? 0
+                            : _textEditingController.text = "";
+                      });
+              },
             ),
           ],
         ));
@@ -334,9 +343,7 @@ class _MapBoxPlaceSearchWidgetState extends State<MapBoxPlaceSearchWidget>
                           scrollDirection: Axis.vertical,
                           reverse: false,
                           child: Text(
-                            _desc == null
-                                ?  widget.awaitingForLocation
-                                : _desc,
+                            _desc == null ? widget.awaitingForLocation : _desc,
                             style: TextStyle(fontSize: 20),
                             textAlign: TextAlign.start,
                           ),
@@ -368,6 +375,9 @@ class _MapBoxPlaceSearchWidgetState extends State<MapBoxPlaceSearchWidget>
               onPressed: () {
                 setState(() {});
                 Navigator.pop(context);
+                if (_prediction != null) {
+                  widget.onSelected(_prediction);
+                }
               }),
         ),
       ),
@@ -460,6 +470,7 @@ class _MapBoxPlaceSearchWidgetState extends State<MapBoxPlaceSearchWidget>
       _placePredictions = [];
       _selectedPlace = prediction.placeName;
       _desc = _selectedPlace;
+      _prediction = prediction;
 
       moveMarker(prediction);
     });
@@ -468,8 +479,6 @@ class _MapBoxPlaceSearchWidgetState extends State<MapBoxPlaceSearchWidget>
     _animationController.reverse();
 
     // Calls the `onSelected` callback
-
-    widget.onSelected(prediction);
 
     //if (widget.popOnSelect) Navigator.pop(context);
   }

@@ -75,7 +75,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Widget getLocationWithMapBox() {
-    return MapBoxPlaceSearchWidget(
+    return MapBoxLocationPicker(
       popOnSelect: true,
       apiKey: "YOUR API KEY",
       limit: 10,
@@ -85,7 +85,8 @@ class _MyHomePageState extends State<MyHomePage> {
       awaitingForLocation: "Procurando por sua localização",
       onSelected: (place) {
         setState(() {
-          _pickedLocationText = place.geometry.coordinates; // Example of how to call the coordinates after using the Mapbox Location Picker
+          _pickedLocationText = place.geometry
+              .coordinates; // Example of how to call the coordinates after using the Mapbox Location Picker
           print(_pickedLocationText);
         });
       },

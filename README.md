@@ -41,7 +41,7 @@ Nominatim Location Picker is a package that appears as a **FREE** alternative (W
 
   
 
-# Nominatim Location Picker's version 0.1.0 new features!
+# Nominatim Location Picker's version 0.1.0+1 new features!
 
 
 - Support with the same interface for MapBox;
@@ -132,7 +132,7 @@ To use this plugin, add `nominatim_location_picker` as a [dependency in your pub
 
 dependencies:
 
-nominatim_location_picker: ^0.1.0
+nominatim_location_picker: ^0.1.0+1
 
 ```
 
@@ -216,7 +216,7 @@ import  'package:nominatim_location_picker/nominatim_location_picker.dart';
 import  'package:nominatim_location_picker/nominatim_location_picker.dart';
 
   Widget getLocationWithMapBox() {
-    return MapBoxPlaceSearchWidget(
+    return MapBoxLocationPicker(
       popOnSelect: true,
       apiKey: "YOUR API KEY",
       limit: 10,
@@ -244,11 +244,8 @@ import  'package:nominatim_location_picker/nominatim_location_picker.dart';
   
 
 | Team Members | Role | Github | Email|
-
 | ------ | ------ | ------ | ------ |
-
 | Lucas Finoti |CEO | [https://github.com/FinotiLucas][LFGh] | lucas.finoti@protonmail.com|
-
 | João Pedro Martins |CTO | [https://github.com/jpmdodev][JpGh] | jpmdo98@gmail.com|
 
   
@@ -262,17 +259,11 @@ Everything that we use as a reference to make this project possible
   
 
 | Source | Web Sites |
-
 | ------ | ------ |
-
 | Nominatim | [https://nominatim.org/release-docs/develop/][NNT] |
-
 | Open Street Map | [https://www.openstreetmap.org][OSM] |
-
 | Wikimedia Maps | [http://wikimapia.org/][WMM] |
-
 | Google Maps Location Picker | [https://pub.dev/packages/google_map_location_picker][GMLP]
-
 | Mapbox Search | [https://pub.dev/packages/mapbox_search][MBS]
 
   
@@ -283,7 +274,7 @@ Everything that we use as a reference to make this project possible
 
 Want to contribute? Great!
 
-Sharing Code makes the world a better place <3
+Code sharing makes the world a better place <3
 
   
   
@@ -296,12 +287,8 @@ Sharing Code makes the world a better place <3
 Help us to continue developing solutions for the community
 
   
-
-<center>
-
 <a  href="https://www.buymeacoffee.com/6cdltqC"  target="_blank"><img  src="https://cdn.buymeacoffee.com/buttons/default-blue.png"  alt="Buy Me A Coffee"  style="height: 51px !important;width: 217px !important;"  ></a>
 
-</center>
 
   
   

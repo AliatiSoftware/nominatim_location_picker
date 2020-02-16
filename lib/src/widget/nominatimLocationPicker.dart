@@ -8,16 +8,16 @@ import 'package:nominatim_location_picker/src/services/nominatim.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
 class NominatimLocationPicker extends StatefulWidget {
-  NominatimLocationPicker({
-    this.searchHint = 'Search',
-    this.awaitingForLocation = "Awaiting for you current location"
-  });
+  NominatimLocationPicker(
+      {this.searchHint = 'Search',
+      this.awaitingForLocation = "Awaiting for you current location"});
 
   final String searchHint;
   final String awaitingForLocation;
 
   @override
-  _NominatimLocationPickerState createState() => _NominatimLocationPickerState();
+  _NominatimLocationPickerState createState() =>
+      _NominatimLocationPickerState();
 }
 
 class _NominatimLocationPickerState extends State<NominatimLocationPicker> {
@@ -275,9 +275,7 @@ class _NominatimLocationPickerState extends State<NominatimLocationPicker> {
                           scrollDirection: Axis.vertical,
                           reverse: false,
                           child: AutoSizeText(
-                            _desc == null 
-                            ? widget.awaitingForLocation 
-                            : _desc,
+                            _desc == null ? widget.awaitingForLocation : _desc,
                             style: TextStyle(fontSize: 20),
                             textAlign: TextAlign.start,
                           ),
