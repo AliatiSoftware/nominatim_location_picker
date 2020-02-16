@@ -244,11 +244,8 @@ import  'package:nominatim_location_picker/nominatim_location_picker.dart';
   
 
 | Team Members | Role | Github | Email|
-
 | ------ | ------ | ------ | ------ |
-
 | Lucas Finoti |CEO | [https://github.com/FinotiLucas][LFGh] | lucas.finoti@protonmail.com|
-
 | João Pedro Martins |CTO | [https://github.com/jpmdodev][JpGh] | jpmdo98@gmail.com|
 
   
@@ -262,17 +259,11 @@ Everything that we use as a reference to make this project possible
   
 
 | Source | Web Sites |
-
 | ------ | ------ |
-
 | Nominatim | [https://nominatim.org/release-docs/develop/][NNT] |
-
 | Open Street Map | [https://www.openstreetmap.org][OSM] |
-
 | Wikimedia Maps | [http://wikimapia.org/][WMM] |
-
 | Google Maps Location Picker | [https://pub.dev/packages/google_map_location_picker][GMLP]
-
 | Mapbox Search | [https://pub.dev/packages/mapbox_search][MBS]
 
   
