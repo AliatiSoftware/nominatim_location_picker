@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nominatim_location_picker/nominatim_location_picker.dart';
+//import 'package:flutter_map/flutter_map.dart';
 
 void main() => runApp(MyApp());
 
@@ -77,7 +78,9 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget getLocationWithMapBox() {
     return MapBoxLocationPicker(
       popOnSelect: true,
-      apiKey: "YOUR API KEY",
+      apiKey:
+          "pk.eyJ1IjoiYWxpYXRpc29mdHdhcmUiLCJhIjoiY2s2bWFiZDZ3MG56ODNkcWZjbWRkMDBncSJ9.pQ9-4cgNJThcp1Q3PILAcg",
+      //apiKey: "YOUR API KEY",
       limit: 10,
       language: 'pt',
       country: 'br',

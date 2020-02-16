@@ -8,12 +8,20 @@ import 'package:nominatim_location_picker/src/services/nominatim.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
 class NominatimLocationPicker extends StatefulWidget {
-  NominatimLocationPicker(
-      {this.searchHint = 'Search',
-      this.awaitingForLocation = "Awaiting for you current location"});
+  NominatimLocationPicker({
+    this.searchHint = 'Search',
+    this.awaitingForLocation = "Awaiting for you current location",
+    this.customMarkerIcon,
+    this.customMapLayer,
+  });
 
   final String searchHint;
   final String awaitingForLocation;
+  //
+  final TileLayerOptions customMapLayer;
+
+  //
+  final Widget customMarkerIcon;
 
   @override
   _NominatimLocationPickerState createState() =>
@@ -32,22 +40,8 @@ class _NominatimLocationPickerState extends State<NominatimLocationPicker> {
   double _lat;
   double _lng;
   MapController _mapController = MapController();
-  List<Marker> _markers = [
-    /*
-    --- manage marker
-  */
-    Marker(
-      width: 50.0,
-      height: 50.0,
-      point: new LatLng(0.0, 0.0),
-      builder: (ctx) => new Container(
-        child: Icon(
-          Icons.location_on,
-          size: 50.0,
-        ),
-      ),
-    )
-  ];
+
+  List<Marker> _markers;
 
   LatLng _point;
 
@@ -61,6 +55,23 @@ class _NominatimLocationPickerState extends State<NominatimLocationPicker> {
   void initState() {
     super.initState();
     _getCurrentLocation();
+    _markers = [
+      /*
+      --- manage marker
+    */
+      Marker(
+        width: 50.0,
+        height: 50.0,
+        point: new LatLng(0.0, 0.0),
+        builder: (ctx) => new Container(
+            child: widget.customMarkerIcon == null
+                ? Icon(
+                    Icons.location_on,
+                    size: 50.0,
+                  )
+                : widget.customMarkerIcon),
+      )
+    ];
   }
 
   void _changeAppBar() {
@@ -103,12 +114,12 @@ class _NominatimLocationPickerState extends State<NominatimLocationPicker> {
         height: 80.0,
         point: LatLng(_currentPosition.latitude, _currentPosition.longitude),
         builder: (ctx) => new Container(
-          child: Icon(
-            Icons.location_on,
-            size: 50.0,
-            color: Colors.black,
-          ),
-        ),
+            child: widget.customMarkerIcon == null
+                ? Icon(
+                    Icons.location_on,
+                    size: 50.0,
+                  )
+                : widget.customMarkerIcon),
       );
     });
   }
@@ -153,7 +164,7 @@ class _NominatimLocationPickerState extends State<NominatimLocationPicker> {
       primary: true,
       title: _buildTextField(_isResult),
       leading: IconButton(
-        icon: Icon(Icons.arrow_back, color: _color),
+        icon: Icon(Icons.arrow_back_ios, color: _color),
         onPressed: () {
           Navigator.of(context).pop();
           FocusScopeNode currentFocus = FocusScope.of(context);
@@ -229,6 +240,7 @@ class _NominatimLocationPickerState extends State<NominatimLocationPicker> {
       lng: _lng,
       mapController: _mapController,
       markers: _markers,
+      customMapLayer: widget.customMapLayer,
     );
   }
 
@@ -356,11 +368,12 @@ class _NominatimLocationPickerState extends State<NominatimLocationPicker> {
                       point: LatLng(double.parse(_addresses[index]['lat']),
                           double.parse(_addresses[index]['lng'])),
                       builder: (ctx) => new Container(
-                        child: Icon(
-                          Icons.location_on,
-                          size: 50.0,
-                        ),
-                      ),
+                          child: widget.customMarkerIcon == null
+                              ? Icon(
+                                  Icons.location_on,
+                                  size: 50.0,
+                                )
+                              : widget.customMarkerIcon),
                     );
                   });
                 },

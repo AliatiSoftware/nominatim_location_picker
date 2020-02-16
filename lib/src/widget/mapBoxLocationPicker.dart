@@ -12,19 +12,28 @@ import 'package:nominatim_location_picker/src/widget/predictions.dart';
 import 'package:nominatim_location_picker/src/services/nominatim.dart';
 
 class MapBoxLocationPicker extends StatefulWidget {
-  MapBoxLocationPicker(
-      {@required this.apiKey,
-      this.onSelected,
-      // this.onSearch,
-      this.searchHint = 'Search',
-      this.language = 'en',
-      this.location,
-      this.limit = 5,
-      this.country,
-      this.context,
-      this.height,
-      this.popOnSelect = false,
-      this.awaitingForLocation = "Awaiting for you current location"});
+  MapBoxLocationPicker({
+    @required this.apiKey,
+    this.onSelected,
+    // this.onSearch,
+    this.searchHint = 'Search',
+    this.language = 'en',
+    this.location,
+    this.limit = 5,
+    this.country,
+    this.context,
+    this.height,
+    this.popOnSelect = false,
+    this.awaitingForLocation = "Awaiting for you current location",
+    this.customMarkerIcon,
+    this.customMapLayer,
+  });
+
+  //
+  final TileLayerOptions customMapLayer;
+
+  //
+  final Widget customMarkerIcon;
 
   /// API Key of the MapBox.
   final String apiKey;
@@ -90,22 +99,8 @@ class _MapBoxLocationPickerState extends State<MapBoxLocationPicker>
 
   double _lng;
   MapController _mapController = MapController();
-  var _markers = [
-    /*
-    --- manage marker
-  */
-    Marker(
-      width: 50.0,
-      height: 50.0,
-      point: new LatLng(0.0, 0.0),
-      builder: (ctx) => new Container(
-        child: Icon(
-          Icons.location_on,
-          size: 50.0,
-        ),
-      ),
-    )
-  ];
+
+  List<Marker> _markers;
 
   MapBoxPlace _prediction;
 
@@ -145,6 +140,25 @@ class _MapBoxLocationPickerState extends State<MapBoxLocationPicker>
       ),
     );
     _getCurrentLocation();
+
+    _markers = [
+      /*
+      --- manage marker
+    */
+      Marker(
+        width: 50.0,
+        height: 50.0,
+        point: new LatLng(0.0, 0.0),
+        builder: (ctx) => new Container(
+            child: widget.customMarkerIcon == null
+                ? Icon(
+                    Icons.location_on,
+                    size: 50.0,
+                  )
+                : widget.customMarkerIcon),
+      )
+    ];
+
     super.initState();
   }
 
@@ -178,12 +192,12 @@ class _MapBoxLocationPickerState extends State<MapBoxLocationPicker>
         height: 80.0,
         point: LatLng(_lat, _lng),
         builder: (ctx) => new Container(
-          child: Icon(
-            Icons.location_on,
-            size: 50.0,
-            color: Colors.black,
-          ),
-        ),
+            child: widget.customMarkerIcon == null
+                ? Icon(
+                    Icons.location_on,
+                    size: 50.0,
+                  )
+                : widget.customMarkerIcon),
       );
     });
   }
@@ -249,7 +263,7 @@ class _MapBoxLocationPickerState extends State<MapBoxLocationPicker>
       title: _buildTextField(),
       leading: IconButton(
         icon: Icon(
-          Icons.arrow_back,
+          Icons.arrow_back_ios,
           color: Colors.black87,
         ),
         onPressed: () {
@@ -301,13 +315,13 @@ class _MapBoxLocationPickerState extends State<MapBoxLocationPicker>
                 color: Colors.black87,
               ),
               onPressed: () {
-                _textEditingController.text == ""
-                    ? null
-                    : setState(() {
-                        _textEditingController.text == ""
-                            ? 0
-                            : _textEditingController.text = "";
-                      });
+                if (_textEditingController.text == "") {
+                  return null;
+                } else {
+                  setState(() {
+                    _textEditingController.text = "";
+                  });
+                }
               },
             ),
           ],
@@ -493,11 +507,12 @@ class _MapBoxLocationPickerState extends State<MapBoxLocationPicker>
         height: 80.0,
         point: LatLng(_lat, _lng),
         builder: (ctx) => new Container(
-          child: Icon(
-            Icons.location_on,
-            size: 50.0,
-          ),
-        ),
+            child: widget.customMarkerIcon == null
+                ? Icon(
+                    Icons.location_on,
+                    size: 50.0,
+                  )
+                : widget.customMarkerIcon),
       );
     });
   }
@@ -514,13 +529,13 @@ class _MapBoxLocationPickerState extends State<MapBoxLocationPicker>
     }
 
     return new MapPage(
-      lat: _lat,
-      lng: _lng,
-      mapController: _mapController,
-      markers: _markers,
-      isNominatim: false,
-      apiKey: widget.apiKey,
-    );
+        lat: _lat,
+        lng: _lng,
+        mapController: _mapController,
+        markers: _markers,
+        isNominatim: false,
+        apiKey: widget.apiKey,
+        customMapLayer: widget.customMapLayer);
   }
 
   @override
@@ -530,7 +545,6 @@ class _MapBoxLocationPickerState extends State<MapBoxLocationPicker>
         appBar: _buildAppbar(),
         body: Stack(
           children: <Widget>[
-            _buildTextField(),
             mapContext(context),
             _buildDescriptionCard(),
             floatingActionButton(),

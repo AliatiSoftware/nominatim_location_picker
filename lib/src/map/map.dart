@@ -3,21 +3,23 @@ import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong/latlong.dart';
 
 class MapPage extends StatefulWidget {
-  MapPage(
-      {Key key,
-      @required this.lat,
-      @required this.lng,
-      @required this.mapController,
-      @required this.markers,
-      this.isNominatim = true,
-      this.apiKey})
-      : super(key: key);
+  MapPage({
+    Key key,
+    @required this.lat,
+    @required this.lng,
+    @required this.mapController,
+    @required this.markers,
+    this.isNominatim = true,
+    this.apiKey,
+    this.customMapLayer,
+  }) : super(key: key);
   final List<Marker> markers;
   final double lat;
   final double lng;
   final MapController mapController;
   final bool isNominatim;
   final String apiKey;
+  final TileLayerOptions customMapLayer;
 
   @override
   _MapPageState createState() => _MapPageState();
@@ -33,18 +35,22 @@ class _MapPageState extends State<MapPage> {
       ),
       layers: [
         widget.isNominatim
-            ? new TileLayerOptions(
-                urlTemplate:
-                    'https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png',
-                subdomains: ['a', 'b', 'c'])
-            : new TileLayerOptions(
-                urlTemplate: "https://api.tiles.mapbox.com/v4/"
-                    "{id}/{z}/{x}/{y}@2x.png?access_token={accessToken}",
-                additionalOptions: {
-                  'accessToken': widget.apiKey,
-                  'id': 'mapbox.streets',
-                },
-              ),
+            ? widget.customMapLayer == null
+                ? new TileLayerOptions(
+                    urlTemplate:
+                        'https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png',
+                    subdomains: ['a', 'b', 'c'])
+                : widget.customMapLayer
+            : widget.customMapLayer == null
+                ? new TileLayerOptions(
+                    urlTemplate: "https://api.tiles.mapbox.com/v4/"
+                        "{id}/{z}/{x}/{y}@2x.png?access_token={accessToken}",
+                    additionalOptions: {
+                      'accessToken': widget.apiKey,
+                      'id': 'mapbox.streets',
+                    },
+                  )
+                : widget.customMapLayer,
         MarkerLayerOptions(
           markers: widget.markers,
         ),

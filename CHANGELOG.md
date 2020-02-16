@@ -1,6 +1,6 @@
 ## [0.0.1] - TODO: Add release date.
 
-* TODO: initial release.
+* TODO: Initial release.
 
 ## [0.1.0] - TODO: Add release date.
 
@@ -8,4 +8,8 @@
 
 ## [0.1.0+1] - TODO: Add release date.
 
-* TODO: small bugs fixes 
+* TODO: Small bugs fixes 
+
+## [0.1.0+2] - TODO: Add release date.
+
+* TODO: Adding custom maps and markers

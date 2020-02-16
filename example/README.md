@@ -13,7 +13,7 @@ To use this plugin, add `nominatim_location_picker` as a [dependency in your pub
 
 dependencies:
 
-nominatim_location_picker: ^0.1.0
+nominatim_location_picker: any # or the latest version on Pub
 
 ```
 
@@ -84,6 +84,42 @@ import  'package:nominatim_location_picker/nominatim_location_picker.dart';
   }
 ```
 
+
+### Nominatim Location Picker with Custom Maps and Markers
+
+[See more in the main.dart file](https://github.com/AliatiSoftware/nominatim_location_picker/blob/master/example/lib/main.dart).
+
+  
+
+``` dart
+
+import  'package:nominatim_location_picker/nominatim_location_picker.dart'; 
+import 'package:flutter_map/flutter_map.dart';
+
+  Future getLocationWithNominatim() async {
+    Map result = await showDialog(
+      context: context,
+      builder: (BuildContext ctx) {
+        return NominatimLocationPicker(
+          searchHint: 'Pesquisar',
+          awaitingForLocation: "Procurando por sua localização",
+          customMarkerIcon: Image.asset(
+            "assets/marker.png",
+          ),
+          customMapLayer: TileLayerOptions(
+            urlTemplate: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+            subdomains: ['a', 'b', 'c']
+          ),
+        );
+      }
+    );
+    if (result != null) {
+      setState(() => _pickedLocation = result);
+    } else {
+      return;
+    }
+  }
+```
   
 
 ### Example of MapBox Location Picker
@@ -108,6 +144,49 @@ import  'package:nominatim_location_picker/nominatim_location_picker.dart';
       onSelected: (place) {
         setState(() {
           _pickedLocationText = place.geometry.coordinates; // Example of how to call the coordinates after using the Mapbox Location Picker
+          print(_pickedLocationText);
+        });
+      },
+      context: context,
+    );
+  }
+```
+
+### MapBox Location Picker with Custom Maps and Markers
+
+[See more in the main.dart file](https://github.com/AliatiSoftware/nominatim_location_picker/blob/master/example/lib/main.dart).
+
+  
+
+``` dart
+
+import  'package:nominatim_location_picker/nominatim_location_picker.dart';
+import 'package:flutter_map/flutter_map.dart';
+
+  Widget getLocationWithMapBox() {
+    return MapBoxLocationPicker(
+      popOnSelect: true,
+      apiKey: "pk.eyJ1IjoiYWxpYXRpc29mdHdhcmUiLCJhIjoiY2s2bWFiZDZ3MG56ODNkcWZjbWRkMDBncSJ9.pQ9-4cgNJThcp1Q3PILAcg",
+      //apiKey: "YOUR API KEY",
+      limit: 10,
+      language: 'pt',
+      country: 'br',
+      searchHint: 'Pesquisar',
+      awaitingForLocation: "Procurando por sua localização",
+      
+      customMarkerIcon: Image.asset(
+        "assets/marker.png",
+      ),
+
+      customMapLayer: TileLayerOptions(
+        urlTemplate: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+        subdomains: ['a', 'b', 'c']
+      ),
+
+      onSelected: (place) {
+        setState(() {
+          _pickedLocationText = place.geometry
+              .coordinates; // Example of how to call the coordinates after using the Mapbox Location Picker
           print(_pickedLocationText);
         });
       },
