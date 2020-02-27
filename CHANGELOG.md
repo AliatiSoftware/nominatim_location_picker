@@ -17,3 +17,7 @@
 ## [0.1.0+3] - TODO: Add release date.
 
 * TODO: Small bugs fixes
+
+## [0.1.0+4] - TODO: Add release date.
+
+* TODO: correcting the error of latitude and longitude

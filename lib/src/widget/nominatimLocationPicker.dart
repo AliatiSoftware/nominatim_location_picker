@@ -355,7 +355,7 @@ class _NominatimLocationPickerState extends State<NominatimLocationPicker> {
                         'description']; /*"${_addresses[index]['country']}, ${_addresses[index]['state']}, ${_addresses[index]['city']}, ${_addresses[index]['city_district']}, ${_addresses[index]['suburb']}";*/
                     _isSearching = false;
                     _lat = double.parse(_addresses[index]['lat']);
-                    _lng = double.parse(_addresses[index]['lat']);
+                    _lng = double.parse(_addresses[index]['lng']);
                     retorno = {
                       'latlng': LatLng(_lat, _lng),
                       'state': _addresses[index]['state'],

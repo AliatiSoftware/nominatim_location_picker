@@ -11,7 +11,7 @@ Nominatim Location Picker is a package that appears as a **FREE** alternative (W
 
   
 
-# Nominatim Location Picker Screenshots
+# Nominatim Location Picker Screenshots  
 
 <p>
 
@@ -41,23 +41,23 @@ Nominatim Location Picker is a package that appears as a **FREE** alternative (W
 
   
 
-# Nominatim Location Picker's version 0.1.0+2 new features!
+# Nominatim Location Picker's version 0.1.0+4 features!
 
-- **Custom Maps and Markers**
+**- Custom Maps and Markers**
 
-- Support with the same interface for MapBox;
+**- Support with the same interface for MapBox;**
 
-- Auto search with MapBox
+**- Auto search with MapBox**
 
-- Geocoding search with Nominatim and Mapbox;
+**- Geocoding search with Nominatim and Mapbox;**
 
-- Get Current User Location;
+**- Get Current User Location;**
 
-- Returns the Latitude and Longitude coordinates of the searched location;
+**- Returns the Latitude and Longitude coordinates of the searched location;**
 
-- Returns the description of the searched location;
+**- Returns the description of the searched location;**
 
-- Returns the Country, State, city and district of the searched Location in both Nominatim and MapBox;
+**- Returns the Country, State, city and district of the searched Location in both Nominatim and MapBox;**
 
   
   
@@ -351,7 +351,7 @@ Everything that we use as a reference to make this project possible
 
 Want to contribute? Great!
 
-Code sharing makes the world a better place <3
+Sharing code makes the world a better place <3
 
   
   
