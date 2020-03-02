@@ -139,7 +139,7 @@ class _NominatimLocationPickerState extends State<NominatimLocationPicker> {
         'latlng': _point,
         'state': _addresses[0]['state'],
         'desc':
-            "${_addresses[0]['country']}, ${_addresses[0]['state']}, ${_addresses[0]['city']}, ${_addresses[0]['city_district']}, ${_addresses[0]['suburb']}"
+            "${_addresses[0]['state']}, ${_addresses[0]['city']}, ${_addresses[0]['suburb']}, ${_addresses[0]['neighbourhood']}, ${_addresses[0]['road']}"
       };
       _desc = _addresses[0]['description'];
     });
@@ -359,8 +359,7 @@ class _NominatimLocationPickerState extends State<NominatimLocationPicker> {
                     retorno = {
                       'latlng': LatLng(_lat, _lng),
                       'state': _addresses[index]['state'],
-                      'desc': _addresses[index][
-                          'description'] /*"${_addresses[index]['country']}, ${_addresses[index]['state']}, ${_addresses[index]['city']}, ${_addresses[index]['city_district']}, ${_addresses[index]['suburb']}";*/
+                      'desc': "${_addresses[index]['state']}, ${_addresses[index]['city']}, ${_addresses[index]['suburb']}, ${_addresses[index]['neighbourhood']}, ${_addresses[index]['road']}"
                     };
                     _markers[0] = Marker(
                       width: 80.0,
