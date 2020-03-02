@@ -4,7 +4,7 @@ import 'dart:convert';
 class NominatimService {
   Future<List<Map>> getAddressLatLng(String address) async {
     var url =
-        "https://nominatim.openstreetmap.org/search?q=${address.replaceAll(RegExp(' '), '+')}&format=json";
+        "https://nominatim.openstreetmap.org/search?q=${address.replaceAll(RegExp(' '), '+')}&format=json&addressdetails=1";
     print(url);
     var response = await http.get(url);
     print('Response status: ${response.statusCode}');
@@ -15,7 +15,12 @@ class NominatimService {
       share.add({
         'lat': ad['lat'],
         'lng': ad['lon'],
-        'description': ad['display_name']
+        'description': ad['display_name'],
+        'state': ad['address']['state'] == null ? "na" : ad['address']['state'],
+        'city': ad['address']['city'] == null ? "na" : ad['address']['city'],
+        'suburb': ad['address']['suburb'] == null ? "na" : ad['address']['suburb'],
+        'neighbourhood': ad['address']['neighbourhood'] == null ? "na" : ad['address']['neighbourhood'],
+        'road': ad['address']['road'] == null ? "na" : ad['address']['road'],
       });
     }
     return share;
