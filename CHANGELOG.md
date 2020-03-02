@@ -21,3 +21,7 @@
 ## [0.1.0+4] - TODO: Add release date.
 
 * TODO: correcting the error of latitude and longitude
+
+## [0.1.0+5] - TODO: Add release date.
+
+* TODO: Adding a more complex support for the returning of addresses in Nominatim

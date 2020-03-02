@@ -164,9 +164,14 @@ class _NominatimLocationPickerState extends State<NominatimLocationPicker> {
       primary: true,
       title: _buildTextField(_isResult),
       leading: IconButton(
-        icon: Icon(Icons.arrow_back_ios, color: _color),
+        icon:
+            Icon(_isResult ? Icons.close : Icons.arrow_back_ios, color: _color),
         onPressed: () {
-          Navigator.of(context).pop();
+          _isSearching
+              ? setState(() {
+                  _isSearching = false;
+                })
+              : Navigator.of(context).pop();
           FocusScopeNode currentFocus = FocusScope.of(context);
           if (!currentFocus.hasPrimaryFocus) {
             currentFocus.unfocus();
@@ -335,7 +340,7 @@ class _NominatimLocationPickerState extends State<NominatimLocationPicker> {
     return new WillPopScope(
       onWillPop: () async => onWillpop(), //Bloquear o retorno
       child: Scaffold(
-        backgroundColor: Colors.white70,
+        backgroundColor: Colors.white,
         body: Container(
           padding: EdgeInsets.fromLTRB(10, 5, 10, 20),
           color: Colors.transparent,
@@ -359,7 +364,8 @@ class _NominatimLocationPickerState extends State<NominatimLocationPicker> {
                     retorno = {
                       'latlng': LatLng(_lat, _lng),
                       'state': _addresses[index]['state'],
-                      'desc': "${_addresses[index]['state']}, ${_addresses[index]['city']}, ${_addresses[index]['suburb']}, ${_addresses[index]['neighbourhood']}, ${_addresses[index]['road']}"
+                      'desc':
+                          "${_addresses[index]['state']}, ${_addresses[index]['city']}, ${_addresses[index]['suburb']}, ${_addresses[index]['neighbourhood']}, ${_addresses[index]['road']}"
                     };
                     _markers[0] = Marker(
                       width: 80.0,
@@ -399,7 +405,7 @@ class _NominatimLocationPickerState extends State<NominatimLocationPicker> {
                 borderRadius: BorderRadius.circular(15.0),
               ),
               //color: Colors.white,
-              elevation: 4,
+              elevation: 0,
               child: Container(
                   padding: EdgeInsets.all(15),
                   child: AutoSizeText(

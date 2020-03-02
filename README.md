@@ -41,7 +41,7 @@ Nominatim Location Picker is a package that appears as a **FREE** alternative (W
 
   
 
-# Nominatim Location Picker's version 0.1.0+4 features!
+# Nominatim Location Picker's version 0.1.0+5 features!
 
 **- Custom Maps and Markers**
 

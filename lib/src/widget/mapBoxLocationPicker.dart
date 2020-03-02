@@ -119,12 +119,9 @@ class _MapBoxLocationPickerState extends State<MapBoxLocationPicker>
   void initState() {
     _animationController =
         AnimationController(vsync: this, duration: Duration(milliseconds: 500));
-    _containerHeight = Tween<double>(
-            begin: 73,
-            end: widget.height ??
-                MediaQuery.of(widget.context).size.height - 60 ??
-                300)
-        .animate(
+    _containerHeight =
+        Tween<double>(begin: 73, end: MediaQuery.of(widget.context).size.height)
+            .animate(
       CurvedAnimation(
         curve: Interval(0.0, 0.5, curve: Curves.easeInOut),
         parent: _animationController,

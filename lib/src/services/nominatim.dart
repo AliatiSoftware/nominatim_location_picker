@@ -18,8 +18,11 @@ class NominatimService {
         'description': ad['display_name'],
         'state': ad['address']['state'] == null ? "na" : ad['address']['state'],
         'city': ad['address']['city'] == null ? "na" : ad['address']['city'],
-        'suburb': ad['address']['suburb'] == null ? "na" : ad['address']['suburb'],
-        'neighbourhood': ad['address']['neighbourhood'] == null ? "na" : ad['address']['neighbourhood'],
+        'suburb':
+            ad['address']['suburb'] == null ? "na" : ad['address']['suburb'],
+        'neighbourhood': ad['address']['neighbourhood'] == null
+            ? "na"
+            : ad['address']['neighbourhood'],
         'road': ad['address']['road'] == null ? "na" : ad['address']['road'],
       });
     }
