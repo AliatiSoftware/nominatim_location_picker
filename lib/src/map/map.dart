@@ -31,15 +31,17 @@ class _MapPageState extends State<MapPage> {
       mapController: widget.mapController,
       options: MapOptions(
         center: LatLng(widget.lat, widget.lng),
-        zoom: 13.0,
+        zoom: 13,
+        maxZoom: 18
       ),
       layers: [
         widget.isNominatim
             ? widget.customMapLayer == null
                 ? new TileLayerOptions(
-                    urlTemplate:
-                        'https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png',
-                    subdomains: ['a', 'b', 'c'])
+                    urlTemplate: 'https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png',
+                    subdomains: ['a', 'b', 'c'],
+                    tileProvider: CachedNetworkTileProvider()
+                  )
                 : widget.customMapLayer
             : widget.customMapLayer == null
                 ? new TileLayerOptions(

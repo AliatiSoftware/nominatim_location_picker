@@ -29,3 +29,7 @@
 ## [0.1.0+6] - TODO: Add release date.
 
 * TODO: Update of all the dependencies
+
+## [0.1.0+7] - TODO: Add release date.
+
+* TODO: fixing the zoom error
